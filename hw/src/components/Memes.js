@@ -22,6 +22,12 @@ class Memes extends Component {
             theme: !theme
         })
     }
+
+    deleteMemes = () => {
+        let copyState = {... this.state}
+        copyState.allMemes = [] // emptying the array of imgs
+        this.setState(copyState)
+    }
     
     render() { 
         let { theme } = this.state // last updated value of theme in the object state after rendering everything else, I think this is why it's recommended to take a copy of the object state
@@ -48,8 +54,12 @@ class Memes extends Component {
                     
                 </form>
                     <button onClick={this.changeTheme}>Change Theme</button>
-                    
-                    {arr.map( (meme, index) => {
+                    <button onClick={this.deleteMemes}>Delete Memes</button>
+
+                    {(this.state.allMemes.length === 0)? <h2>There are no memes :(</h2> : ''}
+
+                    {
+                    arr.map( (meme, index) => {
                     return <Meme className={cname} key={index} id={meme.id} title={meme.title} img={meme.image}/>
                     
                      } )}
