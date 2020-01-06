@@ -273,4 +273,4 @@ Following up on the Codealong and working on the same data add the element of ad
 - Send a pull request using "Solution for Week08Day03"
 
 
-# Total time for both Labs: 2 Days
+# Total time for both HWs: 2 Days
