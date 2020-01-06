@@ -1,5 +1,7 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) HW React Events
 
+# Week08Day02
+
 Following up on the Codealong and working on the same data add the element of adding, removing objects to the meme array in the following way.
 
 ### The images should start as hidden
@@ -240,15 +242,17 @@ Following up on the Codealong and working on the same data add the element of ad
 -  Write `onChange` function to update form object property
 -  Write `onSubmit` function to add form object to meme array in state and reset form object to clear form. 
 
+### On Completion
+- Send a pull request using "Solution for Week08Day02"
 
-# Bonus:
+## Bonus:
 ### Add to previous Meme Codealong
 
 - Add this functionality to the previous meme generator codealong done in the class.
 - The randomImg array should have your newly added image in it.
 
 
-# Extra Bonus:
+## Extra Bonus:
 ### Sign In
 
 -  Add a form and inputs for signing in with email and password
@@ -258,3 +262,15 @@ Following up on the Codealong and working on the same data add the element of ad
 -  Write `onChange` function to update form object property
 -  Add state of signedInEmail that starts as null
 -  Write `onSubmit` function to add form object to signedIn state and only show memes and meme form if they are signed in
+
+
+# Week08Day03
+
+- Using Axios instead of using an array of data provided, Use the following link to pull the data.
+- It should have the possiblity of adding topText and bottomText to the random image that gets displayed from the api.
+
+### On Completion
+- Send a pull request using "Solution for Week08Day03"
+
+
+# Total time for both Labs: 2 Days
