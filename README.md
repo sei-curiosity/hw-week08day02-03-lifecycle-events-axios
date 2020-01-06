@@ -243,7 +243,7 @@ Following up on the Codealong and working on the same data add the element of ad
 -  Write `onSubmit` function to add form object to meme array in state and reset form object to clear form. 
 
 ### On Completion
-- Send a pull request using "Solution for Week08Day02"
+- Send a pull request with commit message "Solution for Week08Day02"
 
 ## Bonus:
 ### Add to previous Meme Codealong
@@ -270,7 +270,7 @@ Following up on the Codealong and working on the same data add the element of ad
 - It should have the possiblity of adding topText and bottomText to the random image that gets displayed from the api.
 
 ### On Completion
-- Send a pull request using "Solution for Week08Day03"
+- Send a pull request with commit message "Solution for Week08Day03"
 
 
 # Total time for both HWs: 2 Days
