@@ -1,13 +1,13 @@
 # HW React Events
 
+Following up on the Codealong and working on the same data add the element of adding, removing objects to the meme array in the following way.
+
 ### The images should start as hidden
 <img src="https://i.imgur.com/wEToxTs.png" width="400px" height="auto" />
 
 
 ### And show when a user clicks on the title show the meme
 <img src="https://i.imgur.com/NNrDmwR.png" width="400px" height="auto" />
-
-## Let's plan out our steps!
 
 ### Memes Data
 ```js
@@ -194,11 +194,6 @@
   }
 ] 
 ```
-
-### Set Up Application
-
-1.  Use create react app to generate a new react application
-2.  Start the application and view on localhost
 
 ### Add Memes to State
 
