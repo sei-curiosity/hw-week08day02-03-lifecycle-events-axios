@@ -242,7 +242,13 @@ Following up on the Codealong and working on the same data add the element of ad
 
 
 # Bonus:
+### Add to previous Meme Codealong
 
+- Add this functionality to the previous meme generator codealong done in the class.
+- The randomImg array should have your newly added image in it.
+
+
+# Extra Bonus:
 ### Sign In
 
 -  Add a form and inputs for signing in with email and password
