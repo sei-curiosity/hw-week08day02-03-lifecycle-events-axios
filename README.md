@@ -241,9 +241,9 @@ Following up on the Codealong and working on the same data add the element of ad
 -  Write `onSubmit` function to add form object to meme array in state and reset form object to clear form. 
 
 
-### Bonus:
+# Bonus:
 
-# Sign In
+### Sign In
 
 -  Add a form and inputs for signing in with email and password
 -  Add form object to state
