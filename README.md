@@ -266,11 +266,13 @@ Following up on the Codealong and working on the same data add the element of ad
 
 # Week08Day03
 
-- Using Axios instead of using an array of data provided, Use the following link to pull the data.
+- Using Axios get the data from the API instead of using an array of data provided, Use the following link to pull the data.
+  `https://api.imgflip.com/get_memes`
+  
 - It should have the possiblity of adding topText and bottomText to the random image that gets displayed from the api.
 
 ### On Completion
 - Send a pull request with commit message "Solution for Week08Day03"
-
+  
 
 # Total time for both HWs: 2 Days
