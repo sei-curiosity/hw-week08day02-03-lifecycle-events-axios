@@ -64,6 +64,6 @@ class Meme extends Component {
             </div>
          );
     }
-}
+} 
  
 export default Meme;
