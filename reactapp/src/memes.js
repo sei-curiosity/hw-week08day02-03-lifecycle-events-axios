@@ -1,3 +1,4 @@
+
 const memes = [
     {
     "id": 1,
@@ -179,6 +180,7 @@ const memes = [
     "title": "YUNO",
     "image": "http://imgur.com/uXKy3RJ.png"
     }
-  ] 
+] 
+
 
   export default memes;
