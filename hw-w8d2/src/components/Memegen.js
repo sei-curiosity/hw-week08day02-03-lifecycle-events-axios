@@ -19,11 +19,10 @@ class Memegen extends Component {
         event.preventDefault()
         
         const {title, image}=this.state
-        
+        console.log(title,image)
         this.setState(({...PrevState})=>{
-            PrevState.allMemeImgs.push({id:PrevState.allMemeImgs.length+1 ,title:title,"image":image})
-            PrevState.title=""
-            PrevState.image=""
+            PrevState.allMemeImgs.push({id:PrevState.allMemeImgs.length+1 ,name:title,url:image})
+            
             return PrevState
         })
             
