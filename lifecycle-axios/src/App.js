@@ -25,14 +25,19 @@ class App extends Component {
     return theme ? { theme: dark, type: theme } : { theme: white, type: theme };
   };
 
+  onDeleteAllMemes = () => {
+    this.setState({ memes: [] });
+  };
+
   render() {
-    const { getCurrentTheme, onChangeTheme } = this;
+    const { getCurrentTheme, onChangeTheme, onDeleteAllMemes } = this;
 
     return (
       <div className="App">
         <Navbar
           getCurrentTheme={getCurrentTheme}
           onChangeTheme={onChangeTheme}
+          onDeleteAllMemes={onDeleteAllMemes}
         />
         <div className="memes flex flex-wrap justify-content-center align-items-center">
           {this.state.memes.map(meme => (
