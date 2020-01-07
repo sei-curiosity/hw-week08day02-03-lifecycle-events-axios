@@ -16,8 +16,13 @@ class Meme extends Component {
     // check index.css
     const className = this.state.visible ? "visible" : "hidden";
 
+    const { theme } = this.props.getCurrentTheme();
+    const [color] = theme;
+
     return (
-      <div className="meme">
+      <div
+        className={`meme flex flex-column justify-content-center align-items-center m-25 w-card ${color}`}
+      >
         <h3 className="clickable" onClick={this.handleHide}>
           {title}
         </h3>
