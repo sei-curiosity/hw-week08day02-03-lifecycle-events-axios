@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Meme from './Meme'
 import './theme.css'
+
+import axios from 'axios'
+
 class Memegen extends Component {
     constructor(props){
 super(props)
@@ -12,7 +15,9 @@ this.state ={
     // randomTitle:"whatever",
     arrayOfMeme:props.data,
     theme:true,
-   deleted:''
+   deleted:'',
+   memes:[],
+
 }
     }
   
@@ -42,10 +47,18 @@ showTheme = ()=>{
 }
 deleteMemes =()=>{
     // const { show } = {...this.state.visible}
-    this.setState ({ arrayOfMeme: [],deleted:"No Memes Available"})
+    this.setState ({ memes:[],deleted:"No Memes Available"})
     
   }
+  componentDidMount(){
 
+    axios.get(`https://api.imgflip.com/get_memes`)
+    .then(response => {
+        const memes = response.data.data.memes
+            this.setState({memes})})
+
+
+  }
     render() { 
         // let titles = this.state.arrayOfMeme.map(e =><Meme title={e.title} image={e.image} id={e.id}> </Meme>)
         let themee
@@ -73,7 +86,7 @@ deleteMemes =()=>{
                 {/* <h2 className="title">{this.state.randomTitle}</h2> */}
                <h2 className="top">{this.state.topText}</h2>
                     <h2 className="bottom">{this.state.bottomText}</h2>
-                    {this.state.arrayOfMeme.map(e =><Meme title={e.title} image={e.image} key={e.id} > </Meme>)}
+                    {this.state.memes.map(e =><Meme title={e.name} image={e.url} key={e.id} > </Meme>)}
 
            </div>
     </div> );

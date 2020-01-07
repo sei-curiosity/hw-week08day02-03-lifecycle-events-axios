@@ -20,14 +20,14 @@ class Meme extends Component {
 
     render() { 
         let showHide =""
-        let button
+      
        
         if(this.state.visible){
             showHide = <img src={this.state.image} alt=""></img>
-            button = "Hide"
+          
             console.log( "always true")
          }else { showHide= ""
-        button = "Show"
+  
        console.log( "this.state.visible")}
         return ( 
         <React.Fragment>
