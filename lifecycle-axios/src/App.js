@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import data from "./data";
 import Meme from "./components/Meme";
 import Navbar from "./components/Navbar";
+import AddNewMeme from "./components/AddNewMeme";
 
 class App extends Component {
   state = {
@@ -46,12 +47,20 @@ class App extends Component {
     return false;
   };
 
+  onAddNewMeme = meme => {
+    const memes = [...this.state.memes];
+    meme.id = this.state.memes.length + 1; // fake ID !
+    memes.push(meme);
+    this.setState({ memes });
+  };
+
   render() {
     const {
       getCurrentTheme,
       onChangeTheme,
       onDeleteAllMemes,
-      onDeleteMeme
+      onDeleteMeme,
+      onAddNewMeme
     } = this;
 
     return (
@@ -61,6 +70,8 @@ class App extends Component {
           onChangeTheme={onChangeTheme}
           onDeleteAllMemes={onDeleteAllMemes}
         />
+
+        <AddNewMeme onAddNewMeme={onAddNewMeme} />
         <div className="memes flex flex-wrap justify-content-center align-items-center">
           {this.state.memes.length <= 0 && <h3>There's No Memes.</h3>}
           {this.state.memes.length > 0 &&
