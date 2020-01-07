@@ -1,3 +1,8 @@
+* {
+  /* this will remove the ugly blue box 
+      -> this is not good for screen readers */
+  outline: none;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -23,4 +28,94 @@ code {
 /* this will make the cursor use always pointer */
 .clickable {
   cursor: pointer;
+}
+
+/* styling */
+
+/* I used variables to organize colors
+  note:
+    -> w means white
+    -> d means dark
+    -> s means shared style
+*/
+:root {
+  /* ---------> shared style <--------- */
+  --s-green: #1abc9c;
+
+  /* ---------> white theme <--------- */
+  /* color property */
+  --w-color: #444;
+  /* body background */
+  --w-body-bgc: #fff;
+
+  /* ---------> dark theme <--------- */
+  --d-color: #ecf0f1;
+  /* body background */
+  --d-body-bgc: #34495e;
+  /* input focus */
+  --d-input-focus: #f1c40f;
+}
+
+/* helpers */
+.flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+/* global style */
+input[type="text"] {
+  border: 1px solid #ccc;
+  font-size: 18px;
+  padding: 8px;
+}
+
+.btn {
+  border: none;
+  font-size: 18px;
+  padding: 12px;
+}
+
+/* -----> white theme classes <----- */
+.w-color {
+  color: var(--w-color);
+}
+.w-body-bgc {
+  background-color: var(--w-body-bgc);
+}
+.w-input-focus:focus {
+  border-color: var(--s-green);
+}
+
+/* -----> dark theme classes <----- */
+.d-color {
+  color: var(--d-color);
+}
+.d-body-bgc {
+  background-color: var(--d-body-bgc);
+}
+.d-input-focus:focus {
+  border-color: var(--d-input-focus);
 }
