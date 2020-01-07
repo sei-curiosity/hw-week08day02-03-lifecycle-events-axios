@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import data from "./data";
+import Meme from "./components/Meme";
 
 class App extends Component {
   state = {
@@ -16,10 +17,12 @@ class App extends Component {
         <h1>My Great Memes</h1>
         <div className="memes">
           {this.state.memes.map(meme => (
-            <div className="meme" key={meme.id}>
-              <h3>{meme.title}</h3>
-              <img src={meme.image} alt={meme.title} />
-            </div>
+            <Meme
+              key={meme.id}
+              id={meme.id}
+              title={meme.title}
+              image={meme.image}
+            />
           ))}
         </div>
       </div>
