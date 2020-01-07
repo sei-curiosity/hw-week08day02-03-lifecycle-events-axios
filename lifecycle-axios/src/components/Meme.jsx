@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import DeleteMeme from "./DeleteMeme";
 
 class Meme extends Component {
   state = {
@@ -26,6 +27,9 @@ class Meme extends Component {
         <h3 className="clickable" onClick={this.handleHide}>
           {title}
         </h3>
+        <DeleteMeme
+          onDeleteMeme={() => this.props.onDeleteMeme(this.props.id)}
+        />
         <img src={image} alt={title} className={className} />
       </div>
     );

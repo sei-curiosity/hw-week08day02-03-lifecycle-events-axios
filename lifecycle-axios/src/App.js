@@ -29,8 +29,28 @@ class App extends Component {
     this.setState({ memes: [] });
   };
 
+  onDeleteMeme = id => {
+    // copy memes
+    const memes = [...this.state.memes];
+    // get index
+    const index = memes.findIndex(meme => meme.id === id);
+    if (index > -1) {
+      memes.splice(index, 1);
+
+      this.setState({ memes });
+    } else {
+      console.log(id);
+      return false;
+    }
+  };
+
   render() {
-    const { getCurrentTheme, onChangeTheme, onDeleteAllMemes } = this;
+    const {
+      getCurrentTheme,
+      onChangeTheme,
+      onDeleteAllMemes,
+      onDeleteMeme
+    } = this;
 
     return (
       <div className="App">
@@ -49,6 +69,7 @@ class App extends Component {
                 title={meme.title}
                 image={meme.image}
                 getCurrentTheme={getCurrentTheme}
+                onDeleteMeme={onDeleteMeme}
               />
             ))}
         </div>
