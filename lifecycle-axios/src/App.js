@@ -34,14 +34,16 @@ class App extends Component {
     const memes = [...this.state.memes];
     // get index
     const index = memes.findIndex(meme => meme.id === id);
+    // check if index is greater than -1
     if (index > -1) {
+      // remove the item from array
       memes.splice(index, 1);
 
+      // update state
       this.setState({ memes });
-    } else {
-      console.log(id);
-      return false;
     }
+
+    return false;
   };
 
   render() {
