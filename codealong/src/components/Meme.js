@@ -32,8 +32,8 @@ class Meme extends Component {
         return ( 
         <React.Fragment>
             
-        <h1 >{this.state.title}</h1>
-        <button onClick={this.showHiden}>{button}</button>
+        <h1 ><a onClick={this.showHiden}>{this.state.title}</a></h1>
+      
        {showHide}
   
         
