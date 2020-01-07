@@ -40,15 +40,17 @@ class App extends Component {
           onDeleteAllMemes={onDeleteAllMemes}
         />
         <div className="memes flex flex-wrap justify-content-center align-items-center">
-          {this.state.memes.map(meme => (
-            <Meme
-              key={meme.id}
-              id={meme.id}
-              title={meme.title}
-              image={meme.image}
-              getCurrentTheme={getCurrentTheme}
-            />
-          ))}
+          {this.state.memes.length <= 0 && <h3>There's No Memes.</h3>}
+          {this.state.memes.length > 0 &&
+            this.state.memes.map(meme => (
+              <Meme
+                key={meme.id}
+                id={meme.id}
+                title={meme.title}
+                image={meme.image}
+                getCurrentTheme={getCurrentTheme}
+              />
+            ))}
         </div>
       </div>
     );
