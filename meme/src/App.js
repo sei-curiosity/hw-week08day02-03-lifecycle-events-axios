@@ -1,13 +1,21 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import memes from './memes'
+import Lifecycle from './component/Lifecycle/Lifecycle'
+import Header from './component/Header/Header'
+import Memegen from './component/Memegen/Memegen'
+import memeList from './memes'
+
 
 function App() {
   return (
-    <div className="App">
-     <Header />
-     <
+    <div>
+     <Lifecycle />
+     <Header/>
+   
+     <Memegen/>
+      
+     
     </div>
   );
 }
