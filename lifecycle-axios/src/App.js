@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import data from "./data";
+// import data from "./data";
 import Meme from "./components/Meme";
 import Navbar from "./components/Navbar";
 import AddNewMeme from "./components/AddNewMeme";
+import axios from "axios";
 
 class App extends Component {
   state = {
@@ -13,7 +14,12 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.setState({ memes: data });
+    // this.setState({ memes: data }); // static data
+    axios
+      .get("https://api.imgflip.com/get_memes")
+      .then(response => response.data.data)
+      .then(data => this.setState({ memes: data.memes }))
+      .catch(error => console.log(error));
   }
 
   onChangeTheme = () => {
@@ -79,8 +85,8 @@ class App extends Component {
               <Meme
                 key={meme.id}
                 id={meme.id}
-                title={meme.title}
-                image={meme.image}
+                title={meme.name}
+                image={meme.url}
                 getCurrentTheme={getCurrentTheme}
                 onDeleteMeme={onDeleteMeme}
               />

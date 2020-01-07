@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 class AddNewMeme extends Component {
   state = {
-    title: "",
-    image: ""
+    name: "",
+    url: ""
   };
 
   handleChange = e => {
@@ -14,10 +14,9 @@ class AddNewMeme extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const meme = { ...this.state };
-    this.props.onAddNewMeme(meme);
-
     // clean input values
-    this.setState({ title: "", image: "" });
+    this.setState({ name: "", url: "" });
+    this.props.onAddNewMeme(meme);
   };
 
   render() {
@@ -27,17 +26,19 @@ class AddNewMeme extends Component {
         <form method="POST" onSubmit={this.handleSubmit}>
           <input
             type="text"
-            name="title"
-            placeholder="Title"
+            name="name"
+            placeholder="name"
             className="mr-25 ml-25"
             onChange={this.handleChange}
+            value={this.state.name}
           />
           <input
             type="text"
-            name="image"
-            placeholder="Image"
+            name="url"
+            placeholder="url"
             className="mr-25"
             onChange={this.handleChange}
+            value={this.state.url}
           />
           <button className="clickable">Add</button>
         </form>
