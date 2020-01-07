@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import memeList from "./data/MemeData";
+import axios from 'axios'
+// import memeList from "./data/MemeData";
 import Meme from "./Meme";
 
 class Memegen extends Component {
@@ -8,7 +9,8 @@ class Memegen extends Component {
         this.state={
             title:"",
             image:"",
-            allMemeImgs: memeList,
+            allMemeImgs:[],
+            //  memeList,
             theme:false
         }
     }
@@ -20,7 +22,8 @@ class Memegen extends Component {
         
         this.setState(({...PrevState})=>{
             PrevState.allMemeImgs.push({id:PrevState.allMemeImgs.length+1 ,title:title,"image":image})
-            
+            PrevState.title=""
+            PrevState.image=""
             return PrevState
         })
             
@@ -79,13 +82,23 @@ class Memegen extends Component {
                 <button className="delete"  onClick={this.theme}>Theme</button>
 
                 {this.state.allMemeImgs.map((meme,index)=> (
-        <Meme  key={index} id={meme.id} title={meme.title} image={meme.image} delete={this.deleteMeme}></Meme>
+        <Meme  key={index} id={meme.id} title={meme.name} image={meme.url} delete={this.deleteMeme}></Meme>
      ))}
                 
                 
             </div>
          );
+
     }
+    componentDidMount(){
+        axios.get(`https://api.imgflip.com/get_memes`)
+        .then(respons=>{
+           const listMemes=respons.data.data.memes
+           this.setState({allMemeImgs:listMemes})
+           console.log(respons.data.data.memes)
+        })
+    }
+
 }
  
 export default Memegen;
