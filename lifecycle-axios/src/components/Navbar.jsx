@@ -9,12 +9,10 @@ const Navbar = props => {
     <div className="flex align-items-center justify-content-between">
       <h1 className={color}>My Great Memes</h1>
       <div>
-        <div>
-          <Theme
-            onChangeTheme={props.onChangeTheme}
-            getCurrentTheme={props.getCurrentTheme}
-          />
-        </div>
+        <Theme
+          onChangeTheme={props.onChangeTheme}
+          getCurrentTheme={props.getCurrentTheme}
+        />
 
         <DeleteAllMemes onDeleteAllMemes={props.onDeleteAllMemes} />
       </div>
