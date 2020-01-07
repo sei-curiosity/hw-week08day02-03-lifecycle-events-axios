@@ -13,7 +13,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello, World</h1>
+        <h1>My Great Memes</h1>
+        <div className="memes">
+          {this.state.memes.map(meme => (
+            <div className="meme" key={meme.id}>
+              <h3>{meme.title}</h3>
+              <img src={meme.image} alt={meme.title} />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
