@@ -23,7 +23,13 @@ class Meme extends Component {
         return ( 
             <div className={`${memeStyle}  ${this.props.className}`} id={this.props.id}>
                 <h3 onClick={this.toggleMe}> {this.props.title} </h3>
-                { visible && (<img src={this.props.img} alt=""/>) }
+                { visible && (
+                <div>
+                <img src={this.props.img} alt=""/> <br />
+                <button onClick={ () => {this.props.delete(this.props.id)}}>Delete Meme</button>
+                </div>
+                )  }
+                
                 
             </div>
         )

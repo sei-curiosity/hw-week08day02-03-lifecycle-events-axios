@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import memesInfo from "./data/memesInfo";
 import Meme from "./Meme";
+import axios from "axios";
 
 class Memes extends Component {
     constructor(props){
@@ -14,6 +15,13 @@ class Memes extends Component {
 
     componentDidMount(){ // after rendering Memes component, we will assign the array we brought from data to the empty array of the state of the initilaized instance state
         this.setState({ allMemes: memesInfo})
+
+        // using axios
+        axios.get(`https://api.imgflip.com/get_memes`)
+        .then(response => {
+            let memes = response.data.memes // getting all memes object
+            console.log(memes)
+        })
     }
 
     changeTheme = () => {
@@ -27,6 +35,14 @@ class Memes extends Component {
         let copyState = {... this.state}
         copyState.allMemes = [] // emptying the array of imgs
         this.setState(copyState)
+    }
+
+    deleteMeme = (id) => {
+        let copyMemes = [...this.state.allMemes]
+        copyMemes = copyMemes.filter( (meme) => (meme.id) !== id ) // all other memes I want except the one we will remove
+        this.setState({
+            allMemes: copyMemes
+        })
     }
     
     render() { 
@@ -60,7 +76,7 @@ class Memes extends Component {
 
                     {
                     arr.map( (meme, index) => {
-                    return <Meme className={cname} key={index} id={meme.id} title={meme.title} img={meme.image}/>
+                    return <Meme className={cname} key={index} id={meme.id} title={meme.title} img={meme.image} delete={this.deleteMeme}/>
                     
                      } )}
 
