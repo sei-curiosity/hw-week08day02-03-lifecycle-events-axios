@@ -69,6 +69,9 @@ class App extends Component {
       onAddNewMeme
     } = this;
 
+    const { theme } = getCurrentTheme();
+    const [color] = theme;
+
     return (
       <div className="App">
         <Navbar
@@ -82,7 +85,9 @@ class App extends Component {
           getCurrentTheme={getCurrentTheme}
         />
         <div className="memes flex flex-wrap justify-content-center align-items-center">
-          {this.state.memes.length <= 0 && <h3>There's No Memes.</h3>}
+          {this.state.memes.length <= 0 && (
+            <h3 className={color}>There's No Memes.</h3>
+          )}
           {this.state.memes.length > 0 &&
             this.state.memes.map(meme => (
               <Meme
