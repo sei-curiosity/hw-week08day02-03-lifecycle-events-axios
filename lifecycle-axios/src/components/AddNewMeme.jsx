@@ -20,15 +20,18 @@ class AddNewMeme extends Component {
   };
 
   render() {
+    const { theme, type } = this.props.getCurrentTheme();
+    const [color, background, focus, button] = theme;
+
     return (
       <div className="flex flex-column">
-        <h3 className="ml-25">Add meme</h3>
+        <h3 className={`ml-25 ${color}`}>Add meme</h3>
         <form method="POST" onSubmit={this.handleSubmit}>
           <input
             type="text"
             name="name"
             placeholder="name"
-            className="mr-25 ml-25"
+            className={`mr-25 ml-25 ${focus}`}
             onChange={this.handleChange}
             value={this.state.name}
           />
@@ -36,11 +39,11 @@ class AddNewMeme extends Component {
             type="text"
             name="url"
             placeholder="url"
-            className="mr-25"
+            className={`mr-25 ${focus}`}
             onChange={this.handleChange}
             value={this.state.url}
           />
-          <button className="clickable">Add</button>
+          <button className={`clickable ${color} ${button}`}>Add</button>
         </form>
       </div>
     );

@@ -1,8 +1,12 @@
 import React from "react";
 
 const DeleteMeme = props => {
+  const { color, button } = props.theme;
   return (
-    <button className="clickable" onClick={props.onDeleteMeme}>
+    <button
+      className={`clickable ${color ? color : ""} ${button ? button : ""}`}
+      onClick={props.onDeleteMeme}
+    >
       Delete
     </button>
   );

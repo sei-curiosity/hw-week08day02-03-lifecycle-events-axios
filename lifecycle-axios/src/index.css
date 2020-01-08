@@ -123,7 +123,7 @@ code {
 
 /* global style */
 input[type="text"] {
-  border: 1px solid #ccc;
+  border: 3px solid #ccc;
   font-size: 18px;
   padding: 8px;
 }

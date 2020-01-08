@@ -77,7 +77,10 @@ class App extends Component {
           onDeleteAllMemes={onDeleteAllMemes}
         />
 
-        <AddNewMeme onAddNewMeme={onAddNewMeme} />
+        <AddNewMeme
+          onAddNewMeme={onAddNewMeme}
+          getCurrentTheme={getCurrentTheme}
+        />
         <div className="memes flex flex-wrap justify-content-center align-items-center">
           {this.state.memes.length <= 0 && <h3>There's No Memes.</h3>}
           {this.state.memes.length > 0 &&

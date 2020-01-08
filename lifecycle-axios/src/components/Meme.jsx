@@ -17,8 +17,8 @@ class Meme extends Component {
     // check index.css
     const className = this.state.visible ? "visible" : "hidden";
 
-    const { theme } = this.props.getCurrentTheme();
-    const [color] = theme;
+    const { theme, type } = this.props.getCurrentTheme();
+    const [color, , , button] = theme;
 
     return (
       <div
@@ -29,6 +29,7 @@ class Meme extends Component {
         </h3>
         <DeleteMeme
           onDeleteMeme={() => this.props.onDeleteMeme(this.props.id)}
+          theme={type ? { color, button } : {}}
         />
         <img src={image} alt={title} className={className} />
       </div>
